@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   imports: [
-    NgFor,NgIf,FormsModule
+    NgFor, NgIf, FormsModule
   ],
 })
 
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   item = signal<string>('Book');
   quantity = signal<number>(1);
-  price  = signal<number>(4);
+  price = signal<number>(4);
   total = computed(() => this.quantity() * this.price());
   inputQty: number = 0;
   inputProductName: string = '';
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     price: number;
     quantity: number;
   }[]>([{ name: 'book', price: 12, quantity: 13 }]);
-  
+
   ngOnInit(): void {
     this.inputQty = this.quantity();
   }
