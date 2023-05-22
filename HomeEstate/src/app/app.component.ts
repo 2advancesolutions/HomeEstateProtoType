@@ -1,12 +1,17 @@
-import { single } from 'rxjs';
-import { Component, OnInit, computed, effect, signal } from '@angular/core';
-
+import { NgFor, NgIf } from '@angular/common';
+import { Component, OnInit, computed, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  imports: [
+    NgFor,NgIf,FormsModule
+  ],
 })
+
 export class AppComponent implements OnInit {
 
   item = signal<string>('Book');
