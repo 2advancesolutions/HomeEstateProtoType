@@ -1,6 +1,24 @@
+<h1>Product List Angular Signal</h1>
 <div>
   <div>Item: {{item()}}</div>
   <div>Price: {{price()}}</div>
-  <div>Qty: {{quantity()}}   <input [(ngModel)]="inputValue" type="number" (change)="setQuatity()"></div>
+  <div>Qty: {{quantity()}}   <input [(ngModel)]="inputQty" type="number" (change)="setQuatity()"></div>
   <div>Total: {{total()}}</div>
 </div>
+
+<ul *ngIf="products()">
+ <li *ngFor="let product of products()">
+       Name: {{product.name}}
+       Price: {{product.price}}
+       Qty: {{product.quantity}}
+ </li>
+</ul>
+
+<div>
+  Product Name: <input [(ngModel)]="inputProductName" type="text">
+  Product Price: <input [(ngModel)]="inputProductPrice" type="number" >
+  Product Qty: <input [(ngModel)]="inputProductQty" type="number">
+</div>
+
+<br>
+<button (click)="addProduct()">Add Product</button>
