@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'HomeEstate';
+  item = signal<string>('Book');
+  quantity = signal<number>(1);
+  price  = signal<number>(4);
+  total = computed(() => this.quantity() * this.price());
+  inputValue: number =  this.quantity();
+
+
+  setQuatity(): void {
+    this.quantity.update( q => q = this.inputValue);
+  };
+
 }
