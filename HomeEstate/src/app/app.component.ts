@@ -32,11 +32,11 @@ export class AppComponent implements OnInit {
   };
 
   addProduct(): void {
-    this.products.mutate(products => products.push({
+    this.products.update(products => [...products, {
       name: this.inputProductName,
       price: this.inputProductPrice,
       quantity: this.inputProductQty
-    }));
+    }]);
   }
 
 }
