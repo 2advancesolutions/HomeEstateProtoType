@@ -1,20 +1,12 @@
-import { NgFor, NgIf } from '@angular/common';
-import { Component, OnInit, computed, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { AvatarModule } from 'primeng/avatar';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, computed, signal } from '@angular/core';
+
 @Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [
-    NgFor,
-    NgIf,
-    FormsModule,
-    AvatarModule,
-    NavBarComponent
-  ],
+  imports: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class AppComponent implements OnInit {
